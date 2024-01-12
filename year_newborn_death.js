@@ -28,8 +28,8 @@ fetch(csvFilePath3)
 
 function drawChart(newbornData) {
     const year = newbornData.map(entry => entry.year);
-    const total = newbornData.map(entry => entry.total);
-    const ctx = document.getElementById('popChart').getContext('2d');
+    const total = newbornData.map(entry => entry.newborn);
+    const ctx = document.getElementById('newbornChart').getContext('2d');
 
     const myChart = new Chart(ctx, {
         type: 'line',
