@@ -13,8 +13,8 @@ fetch(csvFilePath)
 
 
 function drawChart(popData) {
-    const time = popData.map(entry => entry.time);
-    const magnitudes = popData.map(entry => entry.mag);
+    const year = popData.map(entry => entry.year);
+    const total = popData.map(entry => entry.total);
     const ctx = document.getElementById('popChart').getContext('2d');
 
     const myChart = new Chart(ctx, {
