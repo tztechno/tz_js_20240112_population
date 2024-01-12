@@ -24,13 +24,11 @@ function drawChart(newbornData) {
                 data: newbornData.map(entry => ({ x: entry.year, y: entry.newborn })),
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                yAxisID: 'y-newborn',
             }, {
                 label: 'Death',
                 data: newbornData.map(entry => ({ x: entry.year, y: entry.death })),
                 borderColor: 'rgba(255, 99, 132, 1)',
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                yAxisID: 'y-death',
             }],
         },
         options: {
@@ -43,22 +41,15 @@ function drawChart(newbornData) {
                         text: 'Year',
                     }
                 },
-                'y-newborn': {
+                'y': {
                     type: 'linear',
                     position: 'left',
                     title: {
                         display: true,
-                        text: 'Newborn',
+                        text: 'Value',
                     }
-                },
-                'y-death': {
-                    type: 'linear',
-                    position: 'right',
-                    title: {
-                        display: true,
-                        text: 'Death',
-                    }
-                },
+                }
+
             }
         }
     });
