@@ -1,4 +1,4 @@
-fetch(csvFilePath)
+fetch(csvFilePath2)
     .then(response => {
         if (!response.ok) {
             throw new Error(`Failed to fetch CSV, status ${response.status}`);
@@ -8,6 +8,20 @@ fetch(csvFilePath)
     .then(csvData => {
         const newbornData = parseCSV(csvData);
         drawChart(newbornData);
+    })
+    .catch(error => console.error('Error:', error));
+
+
+fetch(csvFilePath3)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to fetch CSV, status ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(csvData => {
+        const deathData = parseCSV(csvData);
+        drawChart(deathData);
     })
     .catch(error => console.error('Error:', error));
 
@@ -22,7 +36,7 @@ function drawChart(newbornData) {
         data: {
             datasets: [{
                 label: 'Population Change',
-                data: popData.map(entry => ({ x: entry.year, y: entry.total })),
+                data: newbornData.map(entry => ({ x: entry.year, y: entry.newborn })),
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
             }]
