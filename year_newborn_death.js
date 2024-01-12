@@ -6,15 +6,15 @@ fetch(csvFilePath)
         return response.text();
     })
     .then(csvData => {
-        const popData = parseCSV(csvData);
-        drawChart(popData);
+        const newbornData = parseCSV(csvData);
+        drawChart(newbornData);
     })
     .catch(error => console.error('Error:', error));
 
 
-function drawChart(popData) {
-    const year = popData.map(entry => entry.year);
-    const total = popData.map(entry => entry.total);
+function drawChart(newbornData) {
+    const year = newbornData.map(entry => entry.year);
+    const total = newbornData.map(entry => entry.total);
     const ctx = document.getElementById('popChart').getContext('2d');
 
     const myChart = new Chart(ctx, {
@@ -42,7 +42,7 @@ function drawChart(popData) {
                     position: 'left',
                     title: {
                         display: true,
-                        text: 'Population',
+                        text: 'newborn',
                     }
                 }
             }
