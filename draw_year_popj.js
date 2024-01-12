@@ -15,7 +15,7 @@ fetch(csvFilePath)
 function drawChart(earthquakeData) {
     const time = earthquakeData.map(entry => entry.time);
     const magnitudes = earthquakeData.map(entry => entry.mag);
-    const ctx = document.getElementById('earthquakeChart').getContext('2d');
+    const ctx = document.getElementById('popChart').getContext('2d');
 
     const myChart = new Chart(ctx, {
         type: 'scatter',
