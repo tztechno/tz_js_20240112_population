@@ -35,7 +35,7 @@ function drawChart(newbornData) {
         type: 'line',
         data: {
             datasets: [{
-                label: 'Population Change',
+                label: 'Newborn Change',
                 data: newbornData.map(entry => ({ x: entry.year, y: entry.newborn })),
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
