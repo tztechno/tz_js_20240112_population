@@ -43,14 +43,6 @@ function drawChart(newbornData) {
                         text: 'Year',
                     }
                 },
-                y: {
-                    type: 'linear',
-                    position: 'left',
-                    title: {
-                        display: true,
-                        text: 'Value',
-                    }
-                },
                 'y-newborn': {
                     type: 'linear',
                     position: 'left',
