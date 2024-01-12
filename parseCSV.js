@@ -1,7 +1,6 @@
 
 const csvFilePath = 'pop_2022.csv'; 
 const csvFilePath2 = 'newborn_2022.csv'; 
-const csvFilePath3 = 'death_2022.csv'; 
 
 function parseCSV(csv) {
     const lines = csv.split('\n');
