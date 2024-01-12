@@ -12,19 +12,6 @@ fetch(csvFilePath2)
     .catch(error => console.error('Error:', error));
 
 
-fetch(csvFilePath3)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Failed to fetch CSV, status ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(csvData => {
-        const deathData = parseCSV(csvData);
-        drawChart(deathData);
-    })
-    .catch(error => console.error('Error:', error));
-
 
 function drawChart(newbornData) {
     const year = newbornData.map(entry => entry.year);
