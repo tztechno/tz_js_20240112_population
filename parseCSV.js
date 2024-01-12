@@ -1,5 +1,5 @@
 
-const csvFilePath = 'population_japan_2022.csv'; 
+const csvFilePath = 'population_2022.csv'; 
 
 function parseCSV(csv) {
     const lines = csv.split('\n');
