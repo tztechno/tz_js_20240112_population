@@ -6,7 +6,7 @@ fetch(csvFilePath)
         return response.text();
     })
     .then(csvData => {
-        const earthquakeData = parseCSV(csvData);
-        drawChart(earthquakeData);
+        const popData = parseCSV(csvData);
+        drawChart(popData);
     })
     .catch(error => console.error('Error:', error));
