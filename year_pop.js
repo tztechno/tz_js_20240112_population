@@ -18,11 +18,11 @@ function drawChart(popData) {
     const ctx = document.getElementById('popChart').getContext('2d');
 
     const myChart = new Chart(ctx, {
-        type: 'scatter',
+        type: 'line',
         data: {
             datasets: [{
                 label: 'Population Change',
-                data: popData.map(entry => ({ x: entry.year, y: entry.pop })),
+                data: popData.map(entry => ({ x: entry.year, y: entry.total })),
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
             }]
